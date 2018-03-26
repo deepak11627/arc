@@ -10,15 +10,15 @@ import "fmt"
 func RenderMessageHeading(msg string) {
 
 	fmt.Println(" ----------------------------------------------------------------- ")
-	fmt.Println("|                       " + msg + "                          |")
-	fmt.Println(" ----------------------------------------------------------------- ")
-	fmt.Println("\n\n")
+	fmt.Println(msg)
+	fmt.Println(" -----------------------------------------------------------------")
+	fmt.Println("\n")
 }
 
 func RenderMessageEnd() {
-	fmt.Println("\n\n")
+	fmt.Println("\n")
 	fmt.Print("-------------------------------------------------------------------")
-	fmt.Println("\n\n")
+	fmt.Println("\n")
 }
 
 func Message(msg string) {
