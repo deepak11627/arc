@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -21,18 +22,23 @@ func main() {
 		SetCacheSize()
 	}
 
-	a := arc.NewARC(CacheSize / 2)
+	a := arc.NewARC(CacheSize)
 	for { // Keep the program executing until user chooses to exit
 		//prompt user to select an option
 		option := showOptions()
 		switch option {
 		case 1:
-			utils.Message("you selected 1")
+			key := ReadCache()
+			v, ok := a.Get(key)
+			if ok {
+				utils.Message(fmt.Sprintf("Value at %s is %s ", key, v))
+			} else {
+				utils.Message("No such key.")
+			}
 		case 2:
 			// Send to LRU handler for option 1
 			k, v := GetKeyValuePair()
 			a.Put(k, v)
-
 		case 3:
 			a.Traverse()
 		case 4:
@@ -46,12 +52,22 @@ func main() {
 
 }
 
+func ReadCache() interface{} {
+	utils.Message("Please enter key to read value from")
+	reader := bufio.NewReader(os.Stdin)
+	k, _ := reader.ReadString('\n')
+	k = strings.Replace(k, "\n", "", -1)
+	return k
+}
+
 func GetKeyValuePair() (interface{}, interface{}) {
 	utils.Message("Please enter key")
 	reader := bufio.NewReader(os.Stdin)
 	k, _ := reader.ReadString('\n')
+	k = strings.Replace(k, "\n", "", -1)
 	utils.Message("Please enter value")
 	v, _ := reader.ReadString('\n')
+	v = strings.Replace(v, "\n", "", -1)
 	return k, v
 }
 
