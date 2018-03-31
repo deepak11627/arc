@@ -9,6 +9,7 @@ import (
 	"github.com/deepak11627/arc/utils"
 )
 
+// ARC struct to implement ARC cache
 type ARC struct {
 	p     int
 	c     int
@@ -21,8 +22,8 @@ type ARC struct {
 	cache map[interface{}]*entry
 }
 
-// New returns a new Adaptive Replacement Cache (ARC).
-func NewARC(c int) *ARC {
+// NewARC returns a new Adaptive Replacement Cache (ARC).
+func NewARC(c int) CacheService {
 	return &ARC{
 		p:     0,
 		c:     c,
@@ -88,15 +89,13 @@ func (a *ARC) Len() int {
 }
 
 func (a *ARC) req(ent *entry) {
-	//fmt.Printf("Entry is %+v\n", ent)
-	//fmt.Printf("ARC is %+v\n", a)
 	if ent.ll == a.t1 || ent.ll == a.t2 {
-		//	fmt.Printf("case 1")
+
 		// repetitive entry so should go into MRU
 		// Case I
 		ent.setMRU(a.t2)
 	} else if ent.ll == a.b1 {
-		//	fmt.Printf("case 2")
+
 		// Case II
 		// Cache Miss in t1 and t2
 
@@ -114,7 +113,7 @@ func (a *ARC) req(ent *entry) {
 	} else if ent.ll == a.b2 {
 		// Case III
 		// Cache Miss in t1 and t2
-		//	fmt.Printf("case 3")
+
 		// Adaptation
 		var d int
 		if a.b2.Len() >= a.b1.Len() {
@@ -128,31 +127,23 @@ func (a *ARC) req(ent *entry) {
 		ent.setMRU(a.t2)
 	} else if ent.ll == nil {
 		// Case IV
-		//	fmt.Printf("case 4")
 		if a.t1.Len()+a.b1.Len() == a.c {
 			// Case A
-			//		fmt.Printf("case 5")
 			if a.t1.Len() < a.c {
-				//			fmt.Printf("case 6")
 				a.delLRU(a.b1)
 				a.replace(ent)
 			} else {
-				//			fmt.Printf("case 7")
 				a.delLRU(a.t1)
 			}
 		} else if a.t1.Len()+a.b1.Len() < a.c {
 			// Case B
-			//		fmt.Printf("case 8")
 			if a.t1.Len()+a.t2.Len()+a.b1.Len()+a.b2.Len() >= a.c {
-				//			fmt.Printf("case 10")
 				if a.t1.Len()+a.t2.Len()+a.b1.Len()+a.b2.Len() == 2*a.c {
-					//				fmt.Printf("case 11")
 					a.delLRU(a.b2)
 				}
 				a.replace(ent)
 			}
 		}
-		//	fmt.Printf("case 9")
 		ent.setLRU(a.t1)
 	}
 }
@@ -182,7 +173,7 @@ func (a *ARC) replace(ent *entry) {
 
 // Traverse prints the items of a list
 func (a *ARC) Traverse() {
-	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d items are", a.c, a.Len()))
+	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d # items are cached.", a.c, a.Len()))
 
 	// Iterate through list and print its contents.
 	for k, v := range a.cache {
