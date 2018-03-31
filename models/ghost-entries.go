@@ -4,12 +4,6 @@ import (
 	"fmt"
 )
 
-// DBService is a generic User operations interface
-type DBService interface {
-	Get(ListID int, key interface{}) (interface{}, error)
-	Add(ListID int, key interface{}, value interface{}) error
-}
-
 // GhostEntries for maintaining Ghost entries
 type GhostEntries struct {
 	ListID     int

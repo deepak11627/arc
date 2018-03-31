@@ -1,7 +1,7 @@
 package log
 
 import (
-	"github.com/deepak11627/tester/app"
+	"github.com/deepak11627/arc/arc"
 	"go.uber.org/zap"
 )
 
@@ -35,7 +35,7 @@ func (l *NopLogger) Error(msg string, keyvals ...interface{}) {
 }
 
 // NewNop logger
-func NewNopLogger() app.Logger {
+func NewNopLogger() arc.Logger {
 	return &NopLogger{
 		zap.NewNop(),
 	}

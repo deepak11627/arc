@@ -24,3 +24,9 @@ type Logger interface {
 	// in production as it is causing a disruption of service. Must be actionable. Stack traces are allowed.
 	Error(msg string, keyvals ...interface{})
 }
+
+// // DBService is a generic User operations interface
+// type DBService interface {
+// 	Get(ListID int, key interface{}) (interface{}, error)
+// 	Add(ListID int, key interface{}, value interface{}) error
+// }

@@ -3,18 +3,18 @@ package models
 import (
 	"database/sql"
 
-	"github.com/deepak11627/tester/app"
+	"github.com/deepak11627/arc/arc"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 // Database to handle all DB operations
 type Database struct {
 	db     *sql.DB
-	logger app.Logger
+	logger arc.Logger
 }
 
-// CustomLogger the logger
-func CustomLogger(l app.Logger) Option {
+// SetLogger the logger
+func SetLogger(l arc.Logger) Option {
 	return func(s *Database) error {
 		s.logger = l
 		return nil

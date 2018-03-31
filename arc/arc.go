@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"sync"
 
+	//"github.com/deepak11627/arc/models"
+
 	"github.com/deepak11627/arc/utils"
 )
 
@@ -21,6 +23,7 @@ type ARC struct {
 	len    int
 	cache  map[interface{}]*entry
 	logger Logger
+	//db     *models.Database
 }
 
 // Option type setting params dynamically
@@ -32,6 +35,13 @@ func SetLogger(l Logger) func(*ARC) {
 		arc.logger = l
 	}
 }
+
+// SetDatabase sets the database for the ARC implimentation
+// func SetDatabase(db *models.Database) func(*ARC) {
+// 	return func(arc *ARC) {
+// 		arc.db = db
+// 	}
+// }
 
 // NewARC returns a new Adaptive Replacement Cache (ARC).
 func NewARC(c int, opts ...Option) CacheService {
@@ -67,9 +77,12 @@ func (a *ARC) Put(key, value interface{}) bool {
 			ghost: false,
 		}
 
+		a.logger.Debug("Adding a new entry item to cache.", "item", fmt.Sprintf("%+v", ent))
+
 		a.req(ent)
 		a.cache[key] = ent
 	} else {
+		a.logger.Debug("Item found in cache, will adjust its position", "item_key", fmt.Sprintf("%s", key))
 		if ent.ghost {
 			a.len++
 		}
@@ -88,6 +101,7 @@ func (a *ARC) Get(key interface{}) (value interface{}, ok bool) {
 
 	ent, ok := a.cache[key]
 	if ok {
+		a.logger.Debug("Reading a value from cache, will adjust its position", "item_keu", fmt.Sprintf("%s", key))
 		a.req(ent)
 		return ent.value, !ent.ghost
 	}
@@ -105,12 +119,12 @@ func (a *ARC) Len() int {
 
 func (a *ARC) req(ent *entry) {
 	if ent.ll == a.t1 || ent.ll == a.t2 {
-
+		a.logger.Debug("Case 1", "item", fmt.Sprintf("%+v", ent))
 		// repetitive entry so should go into MRU
 		// Case I
 		ent.setMRU(a.t2)
 	} else if ent.ll == a.b1 {
-
+		a.logger.Debug("Case 2", "item", fmt.Sprintf("%+v", ent))
 		// Case II
 		// Cache Miss in t1 and t2
 
@@ -128,6 +142,7 @@ func (a *ARC) req(ent *entry) {
 		//ent.setLRU(a.t2)
 		ent.setMRU(a.t2)
 	} else if ent.ll == a.b2 {
+		a.logger.Debug("Case 3", "item", fmt.Sprintf("%+v", ent))
 		// Case III
 		// Cache Miss in t1 and t2
 
@@ -143,6 +158,7 @@ func (a *ARC) req(ent *entry) {
 		a.replace(ent)
 		ent.setMRU(a.t2)
 	} else if ent.ll == nil {
+		a.logger.Debug("Case 4", "item", fmt.Sprintf("%+v", ent))
 		// Case IV
 		if a.t1.Len()+a.b1.Len() == a.c {
 			// Case A
@@ -167,6 +183,7 @@ func (a *ARC) req(ent *entry) {
 
 func (a *ARC) delLRU(list *list.List) {
 	lru := list.Back()
+	a.logger.Debug("Removing item from list", "item", fmt.Sprintf("%+v", lru))
 	list.Remove(lru)
 	a.len--
 	delete(a.cache, lru.Value.(*entry).key)
@@ -175,12 +192,14 @@ func (a *ARC) delLRU(list *list.List) {
 func (a *ARC) replace(ent *entry) {
 	if a.t1.Len() > 0 && ((a.t1.Len() > a.p) || (ent.ll == a.b2 && a.t1.Len() == a.p)) {
 		lru := a.t1.Back().Value.(*entry)
+		a.logger.Debug("Moving item from T1 to B1", "item", fmt.Sprintf("%+v", lru))
 		//	lru.value = nil
 		lru.ghost = true
 		a.len--
 		lru.setMRU(a.b1)
 	} else {
 		lru := a.t2.Back().Value.(*entry)
+		a.logger.Debug("Moving item from T2 to B2", "item", fmt.Sprintf("%+v", lru))
 		//	lru.value = nil
 		lru.ghost = true
 		a.len--
