@@ -1,0 +1,1 @@
+{"loglevel":"INFO","time":"2018-04-01T01:00:41.969+0530","caller":"log/log.go:85","msg":"Log this to file","service":"online-assesment-app","version":"1.0"}

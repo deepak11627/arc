@@ -11,29 +11,44 @@ import (
 
 // ARC struct to implement ARC cache
 type ARC struct {
-	p     int
-	c     int
-	t1    *list.List
-	b1    *list.List
-	t2    *list.List
-	b2    *list.List
-	mutex sync.RWMutex
-	len   int
-	cache map[interface{}]*entry
+	p      int
+	c      int
+	t1     *list.List
+	t2     *list.List
+	b1     *list.List
+	b2     *list.List
+	mutex  sync.RWMutex
+	len    int
+	cache  map[interface{}]*entry
+	logger Logger
+}
+
+// Option type setting params dynamically
+type Option func(*ARC)
+
+// SetLogger function to set logger dynamically
+func SetLogger(l Logger) func(*ARC) {
+	return func(arc *ARC) {
+		arc.logger = l
+	}
 }
 
 // NewARC returns a new Adaptive Replacement Cache (ARC).
-func NewARC(c int) CacheService {
-	return &ARC{
+func NewARC(c int, opts ...Option) CacheService {
+	arc := &ARC{
 		p:     0,
 		c:     c,
 		t1:    list.New(),
-		b1:    list.New(),
 		t2:    list.New(),
+		b1:    list.New(),
 		b2:    list.New(),
 		len:   0,
 		cache: make(map[interface{}]*entry, c),
 	}
+	for _, o := range opts {
+		o(arc)
+	}
+	return arc
 }
 
 // Put inserts a new key-value pair into the cache.
@@ -109,7 +124,9 @@ func (a *ARC) req(ent *entry) {
 		a.p = utils.Min(a.p+d, a.c)
 
 		a.replace(ent)
-		ent.setLRU(a.t2)
+
+		//ent.setLRU(a.t2)
+		ent.setMRU(a.t2)
 	} else if ent.ll == a.b2 {
 		// Case III
 		// Cache Miss in t1 and t2
@@ -144,12 +161,12 @@ func (a *ARC) req(ent *entry) {
 				a.replace(ent)
 			}
 		}
-		ent.setLRU(a.t1)
+		ent.setMRU(a.t1)
 	}
 }
 
 func (a *ARC) delLRU(list *list.List) {
-	lru := list.Front()
+	lru := list.Back()
 	list.Remove(lru)
 	a.len--
 	delete(a.cache, lru.Value.(*entry).key)
@@ -158,13 +175,13 @@ func (a *ARC) delLRU(list *list.List) {
 func (a *ARC) replace(ent *entry) {
 	if a.t1.Len() > 0 && ((a.t1.Len() > a.p) || (ent.ll == a.b2 && a.t1.Len() == a.p)) {
 		lru := a.t1.Back().Value.(*entry)
-		lru.value = nil
+		//	lru.value = nil
 		lru.ghost = true
 		a.len--
-		lru.setLRU(a.b1)
+		lru.setMRU(a.b1)
 	} else {
 		lru := a.t2.Back().Value.(*entry)
-		lru.value = nil
+		//	lru.value = nil
 		lru.ghost = true
 		a.len--
 		lru.setMRU(a.b2)
@@ -173,7 +190,7 @@ func (a *ARC) replace(ent *entry) {
 
 // Traverse prints the items of a list
 func (a *ARC) Traverse() {
-	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d # items are cached.", a.c, a.Len()))
+	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d # items are cached.\n", a.c, a.Len()))
 
 	// Iterate through list and print its contents.
 	for k, v := range a.cache {

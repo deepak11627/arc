@@ -1,7 +1,7 @@
 package log
 
 import (
-	"github.com/deepak11627/tester/app"
+	"github.com/deepak11627/arc/arc"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -33,7 +33,7 @@ type Logger struct {
 }
 
 // NewLogger return a logger
-func NewLogger(config *Config) (app.Logger, error) {
+func NewLogger(config *Config) (arc.Logger, error) {
 	level := zap.InfoLevel
 	if config.Debug {
 		level = zap.DebugLevel
@@ -61,7 +61,7 @@ func NewLogger(config *Config) (app.Logger, error) {
 	cfg.EncoderConfig.EncodeLevel = zapcore.CapitalLevelEncoder
 
 	logger, err := cfg.Build(zap.Fields(
-		zap.String("service", "online-assesment-app"),
+		zap.String("service", "ARC-IN-GO"),
 		zap.String("version", config.ApplicationVersion),
 	))
 
@@ -93,9 +93,4 @@ func (l *Logger) Warn(msg string, keyvals ...interface{}) {
 // Error logs a error message to the zap logger
 func (l *Logger) Error(msg string, keyvals ...interface{}) {
 	l.Errorw(msg, keyvals...)
-}
-
-// With returns a new logger with the provided keyvals added to its context
-func (l *Logger) With(keyvals ...interface{}) app.ContextLogger {
-	return &Logger{l.SugaredLogger.With(keyvals...)}
 }

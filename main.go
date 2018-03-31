@@ -2,19 +2,36 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"os"
 	"strconv"
 	"strings"
 
 	"github.com/deepak11627/arc/arc"
+	"github.com/deepak11627/arc/log"
 	"github.com/deepak11627/arc/utils"
 )
 
 //CacheSize the number of maximum values to cache.
 var CacheSize int
+var debug bool
+var logPath string
 
+func init() {
+	// Initialise things here
+	flag.BoolVar(&debug, "debug", true, "Set the log level to debug")
+	flag.StringVar(&logPath, "log-path", "", "File path for log. Will attempt to create file but not directories. If empty (default) Stdout will be used.")
+
+}
 func main() {
+
+	// Logger
+	logger, err := log.NewLogger(&log.Config{ApplicationVersion: "1.0", Debug: debug, JSONFormat: true, LogPath: "out.log"})
+	if err != nil {
+		fmt.Println("unexpected error getting logger Error:", err)
+		os.Exit(1)
+	}
 
 	// Let's take cache size from user
 	utils.Message("Please enter maximum number of keys which caching system should store. ")
@@ -22,7 +39,9 @@ func main() {
 		SetCacheSize()
 	}
 
-	a := arc.NewARC(CacheSize)
+	a := arc.NewARC(CacheSize, arc.SetLogger(logger))
+
+	logger.Info("Log this to file")
 	for { // Keep the program executing until user chooses to exit
 		//prompt user to select an option
 		option := showOptions()
@@ -31,9 +50,9 @@ func main() {
 			key := ReadCache()
 			v, ok := a.Get(key)
 			if ok {
-				utils.Message(fmt.Sprintf("Value at %s is %s ", key, v))
+				utils.Message(fmt.Sprintf("Value at %s is %s \n", key, v))
 			} else {
-				utils.Message("No such key.")
+				utils.Message("No such key.\n")
 			}
 		case 2:
 			// Send to LRU handler for option 1
