@@ -53,7 +53,7 @@ func main() {
 }
 
 func ReadCache() interface{} {
-	utils.Message("Please enter key to read value from")
+	utils.Message("Please enter key to read value from ")
 	reader := bufio.NewReader(os.Stdin)
 	k, _ := reader.ReadString('\n')
 	k = strings.Replace(k, "\n", "", -1)
@@ -61,11 +61,11 @@ func ReadCache() interface{} {
 }
 
 func GetKeyValuePair() (interface{}, interface{}) {
-	utils.Message("Please enter key")
+	utils.Message("Please enter key ")
 	reader := bufio.NewReader(os.Stdin)
 	k, _ := reader.ReadString('\n')
 	k = strings.Replace(k, "\n", "", -1)
-	utils.Message("Please enter value")
+	utils.Message("Please enter value ")
 	v, _ := reader.ReadString('\n')
 	v = strings.Replace(v, "\n", "", -1)
 	return k, v

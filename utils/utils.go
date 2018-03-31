@@ -4,20 +4,20 @@ import "fmt"
 
 func RenderMessageHeading(msg string) {
 
-	fmt.Println("-----------------------------------------------------------------")
-	fmt.Println(msg)
-	fmt.Println("-----------------------------------------------------------------")
-	fmt.Println("\n")
+	fmt.Print("-----------------------------------------------------------------\n" + msg)
+	//fmt.Println(msg)
+	//fmt.Println("-----------------------------------------------------------------")
+	//fmt.Println("\n")
 }
 
 func RenderMessageEnd() {
-	fmt.Println("\n")
-	fmt.Print("-----------------------------------------------------------------")
-	fmt.Println("\n")
+	//fmt.Println("\n")
+	fmt.Println("\n-----------------------------------------------------------------")
+	//fmt.Println("\n")
 }
 
 func Message(msg string) {
-	fmt.Println("> " + msg)
+	fmt.Print("\n> " + msg)
 }
 
 func Min(x, y int) int {

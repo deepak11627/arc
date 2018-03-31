@@ -92,6 +92,7 @@ func (a *ARC) req(ent *entry) {
 	//fmt.Printf("ARC is %+v\n", a)
 	if ent.ll == a.t1 || ent.ll == a.t2 {
 		//	fmt.Printf("case 1")
+		// repetitive entry so should go into MRU
 		// Case I
 		ent.setMRU(a.t2)
 	} else if ent.ll == a.b1 {
@@ -157,7 +158,7 @@ func (a *ARC) req(ent *entry) {
 }
 
 func (a *ARC) delLRU(list *list.List) {
-	lru := list.Back()
+	lru := list.Front()
 	list.Remove(lru)
 	a.len--
 	delete(a.cache, lru.Value.(*entry).key)
@@ -181,11 +182,13 @@ func (a *ARC) replace(ent *entry) {
 
 // Traverse prints the items of a list
 func (a *ARC) Traverse() {
-	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d items are", a.c, a.len))
+	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d items are", a.c, a.Len()))
 
 	// Iterate through list and print its contents.
 	for k, v := range a.cache {
-		fmt.Printf("Value at %s is %s\n", k, v.value)
+		if !v.ghost {
+			fmt.Printf("Value at %s is %s\n", k, v.value)
+		}
 	}
 
 	utils.RenderMessageEnd()
