@@ -7,20 +7,20 @@ import (
 type entry struct {
 	key   interface{}
 	value interface{}
-	ll    *list.List
+	ll    ListService
 	el    *list.Element
 	ghost bool
 }
 
-func (e *entry) setLRU(list *list.List) {
+func (e *entry) setLRU(l interface{}) {
 	e.detach()
-	e.ll = list
+	e.ll = l.(*list.List)
 	e.el = e.ll.PushBack(e)
 }
 
-func (e *entry) setMRU(list *list.List) {
+func (e *entry) setMRU(l interface{}) {
 	e.detach()
-	e.ll = list
+	e.ll = l.(*list.List)
 	e.el = e.ll.PushFront(e)
 }
 

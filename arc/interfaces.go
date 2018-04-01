@@ -1,5 +1,7 @@
 package arc
 
+import "container/list"
+
 // CacheService is interface for ARC
 type CacheService interface {
 	Get(key interface{}) (value interface{}, ok bool)
@@ -10,23 +12,34 @@ type CacheService interface {
 
 // Logger is used for logging
 type Logger interface {
-	// Debug logging: an informative message that can aid in debugging. Will normally not be captured but may be enabled
-	// on demand to diagnose production issues.
+	// Debug logging: an informative message that can aid in debugging.
 	Debug(msg string, keyvals ...interface{})
-	// Info logging: a high-level event occurred such as a business transaction completed. These will never generate
-	// alerts but are vital to understanding what the system is doing. Stack traces are not appropriate.
+	// Info logging: a high-level event occurred such as a business transaction completed.
 	Info(msg string, keyvals ...interface{})
 	// Warn logging: the component is not operating optimally but is not in immediate danger of disrupting service.
-	// Warnings are likely to generate production alerts if they happen frequently (spikes), otherwise they are
-	// prioritised for action the next working day. Must be actionable. Stack trace should be restricted.
 	Warn(msg string, keyvals ...interface{})
-	// Error logging: The component is not operating correctly and needs urgent assistance. This is worthy of an alert
-	// in production as it is causing a disruption of service. Must be actionable. Stack traces are allowed.
+	// Error logging: The component is not operating correctly and needs urgent assistance.
 	Error(msg string, keyvals ...interface{})
 }
 
-// // DBService is a generic User operations interface
-// type DBService interface {
-// 	Get(ListID int, key interface{}) (interface{}, error)
-// 	Add(ListID int, key interface{}, value interface{}) error
-// }
+// DBService is a generic User operations interface
+type DBService interface {
+	Get(ListID int, key interface{}) (interface{}, error)
+	Add(ListID int, key interface{}, value interface{}) error
+}
+
+// EntryService is to allow ghost entries to be stored into the database
+type EntryService interface {
+	setLRU(l interface{})
+	setMRU(l interface{})
+}
+
+// ListService for generic lists
+type ListService interface {
+	Len() int
+	Back() *list.Element
+	Front() *list.Element
+	Remove(*list.Element) interface{}
+	PushBack(interface{}) *list.Element
+	PushFront(interface{}) *list.Element
+}

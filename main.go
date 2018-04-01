@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"container/list"
 	"flag"
 	"fmt"
 	"os"
@@ -10,6 +11,7 @@ import (
 
 	"github.com/deepak11627/arc/arc"
 	"github.com/deepak11627/arc/log"
+	"github.com/deepak11627/arc/models"
 	"github.com/deepak11627/arc/utils"
 )
 
@@ -34,14 +36,14 @@ func main() {
 	}
 
 	// Database
-	// db, err := models.Open(os.Getenv("__ARC_APP_DSN"))
-	// if err != nil {
-	// 	logger.Error("unexpected error getting db connection", "err", err)
-	// 	fmt.Println("unexpected error getting db connection:", err)
-	// 	os.Exit(1)
-	// }
-	// database := models.NewDatabase(db, models.SetLogger(logger))
-	// defer database.Close()
+	db, err := models.Open("root:root@tcp(127.0.0.1:3306)/arc")
+	if err != nil {
+		logger.Error("unexpected error getting db connection", "err", err)
+		fmt.Println("unexpected error getting db connection:", err)
+		os.Exit(1)
+	}
+	database := models.NewDatabase(db)
+	defer database.Close()
 
 	// Let's take cache size from user
 	utils.Message("Please enter maximum number of keys which caching system should store. ")
@@ -49,7 +51,12 @@ func main() {
 		SetCacheSize()
 	}
 
-	a := arc.NewARC(CacheSize, arc.SetLogger(logger))
+	a := arc.NewARC(CacheSize,
+		list.New(),
+		list.New(),
+		list.New(),
+		list.New(),
+		arc.SetLogger(logger))
 
 	for { // Keep the program executing until user chooses to exit
 		//prompt user to select an option

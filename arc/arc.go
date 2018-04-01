@@ -2,28 +2,28 @@
 package arc
 
 import (
-	"container/list"
 	"fmt"
 	"sync"
 
-	//"github.com/deepak11627/arc/models"
-
+	"github.com/deepak11627/arc/models"
 	"github.com/deepak11627/arc/utils"
 )
 
 // ARC struct to implement ARC cache
 type ARC struct {
-	p      int
-	c      int
-	t1     *list.List
-	t2     *list.List
-	b1     *list.List
-	b2     *list.List
+	p  int
+	c  int
+	t1 ListService
+	t2 ListService
+	b1 ListService
+	b2 ListService
+	//	bb1    map[interface{}]interface{}
+	//	bb2    map[interface{}]interface{}
 	mutex  sync.RWMutex
 	len    int
 	cache  map[interface{}]*entry
 	logger Logger
-	//db     *models.Database
+	db     *models.Database
 }
 
 // Option type setting params dynamically
@@ -37,21 +37,21 @@ func SetLogger(l Logger) func(*ARC) {
 }
 
 // SetDatabase sets the database for the ARC implimentation
-// func SetDatabase(db *models.Database) func(*ARC) {
-// 	return func(arc *ARC) {
-// 		arc.db = db
-// 	}
-// }
+func SetDatabase(db *models.Database) func(*ARC) {
+	return func(arc *ARC) {
+		arc.db = db
+	}
+}
 
 // NewARC returns a new Adaptive Replacement Cache (ARC).
-func NewARC(c int, opts ...Option) CacheService {
+func NewARC(c int, t1, t2, b1, b2 ListService, opts ...Option) CacheService {
 	arc := &ARC{
 		p:     0,
 		c:     c,
-		t1:    list.New(),
-		t2:    list.New(),
-		b1:    list.New(),
-		b2:    list.New(),
+		t1:    t1,
+		t2:    t2,
+		b1:    b1,
+		b2:    b2,
 		len:   0,
 		cache: make(map[interface{}]*entry, c),
 	}
@@ -181,10 +181,18 @@ func (a *ARC) req(ent *entry) {
 	}
 }
 
-func (a *ARC) delLRU(list *list.List) {
-	lru := list.Back()
+func getB1() map[interface{}]interface{} {
+	return nil
+}
+
+func getB2() map[interface{}]interface{} {
+	return nil
+}
+
+func (a *ARC) delLRU(l ListService) {
+	lru := l.Back()
 	a.logger.Debug("Removing item from list", "item", fmt.Sprintf("%+v", lru))
-	list.Remove(lru)
+	l.Remove(lru)
 	a.len--
 	delete(a.cache, lru.Value.(*entry).key)
 }
