@@ -4,34 +4,83 @@ import (
 	"fmt"
 )
 
-// GhostEntry for maintaining Ghost entries
-type GhostEntry struct {
-	Ghostkey   interface{}
-	Ghostvalue interface{}
-	ghost      bool
+type Element struct {
+	next, prev *Element
+
+	// The list to which this element belongs.
+	list *GhostList
+
+	// The value stored with this element.
+	Value interface{}
 }
 
-func (e *GhostEntry) setLRU(l interface{}) {
-	// e.detach()
-	// e.ll = l.(*list.List)
-	// e.el = e.ll.PushBack(e)
-}
-
-func (e *GhostEntry) setMRU(l interface{}) {
-	// e.detach()
-	// e.ll = l.(*list.List)
-	// e.el = e.ll.PushFront(e)
-}
-
-func (e *GhostEntry) detach() {
-	// if e.ll != nil {
-	// 	e.ll.Remove(e.el)
+// // Next returns the next list element or nil.
+func (e *Element) Next() *Element {
+	// if p := e.next; e.list != nil && p != &e.list.root {
+	// 	return p
 	// }
+	return nil
+}
+
+// Prev returns the previous list element or nil.
+func (e *Element) Prev() *Element {
+	// if p := e.prev; e.list != nil && p != &e.list.root {
+	// 	return p
+	// }
+	return nil
+}
+
+// GhostList for maintaining Ghost entries
+type GhostList struct {
+	ID       string
+	root     Element
+	len      int
+	database *Database
+}
+
+// NewGhostList return a new ghost list
+func NewGhostList(db *Database) *GhostList {
+	return &GhostList{
+		database: db,
+		len:      0,
+	}
+}
+
+// Back returns last element from database
+func (gl *GhostList) Back() *Element {
+	return &Element{}
+}
+
+// Front returns the first element from database
+func (gl *GhostList) Front() *Element {
+	return &Element{}
+}
+
+// Len return count of values from database
+func (gl *GhostList) Len() int {
+	return 0
+}
+
+// Remove delete an element from database
+func (gl *GhostList) Remove(*Element) interface{} {
+	return nil
+}
+
+// PushFront inserts a new element e with value v at the front of list l and returns e.
+func (gl *GhostList) PushFront(e interface{}) *Element {
+	return nil
+}
+
+// PushFront inserts a new element e with value v at the front of list l and returns e.
+func (gl *GhostList) PushBack(v interface{}) *Element {
+	return nil
 }
 
 // Get returns a list of ghost entries from database for the given list (B1, or B2)
-func (g *GhostEntry) Get(database *Database, listID int) (map[interface{}]interface{}, error) {
-	rows, err := database.db.Query("SELECT ghost_key, ghost_value FROM ghost_entries = ?", listID)
+func (gl *GhostList) Get(listID int) (map[interface{}]interface{}, error) {
+	logger := gl.database.logger
+	logger.Debug("Geting key value pair from database.")
+	rows, err := gl.database.db.Query("SELECT ghost_key, ghost_value FROM ghost_entries = ?", listID)
 	if err != nil {
 		return nil, err
 	}
@@ -51,10 +100,12 @@ func (g *GhostEntry) Get(database *Database, listID int) (map[interface{}]interf
 	return entries, nil
 }
 
-// Add saves a ghost entry into database
-func (g *GhostEntry) Add(database *Database, listID int, key, value interface{}) error {
+// Add saves a ghost List into database
+func (gl *GhostList) Add(listID int, key, value interface{}) error {
+	logger := gl.database.logger
+	logger.Debug("Saving a key value pair in database.")
 
-	stmt, err := database.db.Prepare("INSERT INTO `ghost_entries` (`list_id`, `ghost_key`, `ghost_value`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `ghost_value` = VALUES(`ghost_value`);")
+	stmt, err := gl.database.db.Prepare("INSERT INTO `ghost_entries` (`list_id`, `ghost_key`, `ghost_value`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `ghost_value` = VALUES(`ghost_value`);")
 
 	if err != nil {
 		return fmt.Errorf("Error preparing add ghost entry %s", err)

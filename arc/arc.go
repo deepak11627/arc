@@ -5,25 +5,21 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/deepak11627/arc/models"
 	"github.com/deepak11627/arc/utils"
 )
 
 // ARC struct to implement ARC cache
 type ARC struct {
-	p  int
-	c  int
-	t1 ListService
-	t2 ListService
-	b1 ListService
-	b2 ListService
-	//	bb1    map[interface{}]interface{}
-	//	bb2    map[interface{}]interface{}
+	p      int
+	c      int
+	t1     ListService
+	t2     ListService
+	b1     ListService
+	b2     ListService
 	mutex  sync.RWMutex
 	len    int
 	cache  map[interface{}]*entry
 	logger Logger
-	db     *models.Database
 }
 
 // Option type setting params dynamically
@@ -33,13 +29,6 @@ type Option func(*ARC)
 func SetLogger(l Logger) func(*ARC) {
 	return func(arc *ARC) {
 		arc.logger = l
-	}
-}
-
-// SetDatabase sets the database for the ARC implimentation
-func SetDatabase(db *models.Database) func(*ARC) {
-	return func(arc *ARC) {
-		arc.db = db
 	}
 }
 
@@ -179,14 +168,6 @@ func (a *ARC) req(ent *entry) {
 		}
 		ent.setMRU(a.t1)
 	}
-}
-
-func getB1() map[interface{}]interface{} {
-	return nil
-}
-
-func getB2() map[interface{}]interface{} {
-	return nil
 }
 
 func (a *ARC) delLRU(l ListService) {

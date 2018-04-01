@@ -14,13 +14,23 @@ type entry struct {
 
 func (e *entry) setLRU(l interface{}) {
 	e.detach()
-	e.ll = l.(*list.List)
+	switch l.(type) { // type assertion to check if its list or db
+	case *list.List:
+		e.ll = l.(*list.List)
+		// case *models.GhostList:
+		// 	e.ll = l.(*models.GhostList)
+	}
 	e.el = e.ll.PushBack(e)
 }
 
 func (e *entry) setMRU(l interface{}) {
 	e.detach()
-	e.ll = l.(*list.List)
+	switch l.(type) { // type assertion to check if its list or db
+	case *list.List:
+		e.ll = l.(*list.List)
+		// case *models.GhostList:
+		// 	e.ll = l.(*models.GhostList)
+	}
 	e.el = e.ll.PushFront(e)
 }
 

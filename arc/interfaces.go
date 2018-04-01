@@ -1,6 +1,8 @@
 package arc
 
-import "container/list"
+import (
+	"container/list"
+)
 
 // CacheService is interface for ARC
 type CacheService interface {
@@ -34,12 +36,18 @@ type EntryService interface {
 	setMRU(l interface{})
 }
 
+// ElementService is to maintain list items
+type ElementService interface {
+	Next() ElementService
+	Prev() ElementService
+}
+
 // ListService for generic lists
 type ListService interface {
 	Len() int
 	Back() *list.Element
 	Front() *list.Element
-	Remove(*list.Element) interface{}
-	PushBack(interface{}) *list.Element
-	PushFront(interface{}) *list.Element
+	Remove(e *list.Element) interface{}
+	PushBack(i interface{}) *list.Element
+	PushFront(i interface{}) *list.Element
 }

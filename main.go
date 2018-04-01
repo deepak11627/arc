@@ -42,7 +42,7 @@ func main() {
 		fmt.Println("unexpected error getting db connection:", err)
 		os.Exit(1)
 	}
-	database := models.NewDatabase(db)
+	database := models.NewDatabase(db, models.SetLogger(logger))
 	defer database.Close()
 
 	// Let's take cache size from user
@@ -56,6 +56,8 @@ func main() {
 		list.New(),
 		list.New(),
 		list.New(),
+		// models.NewGhostList(),
+		//models.NewGhostList(database),
 		arc.SetLogger(logger))
 
 	for { // Keep the program executing until user chooses to exit

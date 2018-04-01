@@ -4,22 +4,23 @@ import (
 	"database/sql"
 
 	//"github.com/deepak11627/arc/arc"
+	"github.com/deepak11627/arc/arc"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 // Database to handle all DB operations
 type Database struct {
-	db *sql.DB
-	//	logger arc.Logger
+	db     *sql.DB
+	logger arc.Logger
 }
 
 // SetLogger the logger
-// func SetLogger(l arc.Logger) Option {
-// 	return func(s *Database) error {
-// 		s.logger = l
-// 		return nil
-// 	}
-// }
+func SetLogger(l arc.Logger) Option {
+	return func(s *Database) error {
+		s.logger = l
+		return nil
+	}
+}
 
 // Option for optional params that can be set later
 type Option func(s *Database) error
