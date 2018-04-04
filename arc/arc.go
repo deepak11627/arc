@@ -20,6 +20,7 @@ type ARC struct {
 	len    int
 	cache  map[interface{}]*entry
 	logger Logger
+	db     DBService
 }
 
 // Option type setting params dynamically
@@ -29,6 +30,13 @@ type Option func(*ARC)
 func SetLogger(l Logger) func(*ARC) {
 	return func(arc *ARC) {
 		arc.logger = l
+	}
+}
+
+// SetDatabaseListService function to set logger dynamically
+func SetDatabaseListService(db DBService) func(*ARC) {
+	return func(arc *ARC) {
+		arc.db = db
 	}
 }
 
@@ -153,6 +161,7 @@ func (a *ARC) req(ent *entry) {
 			// Case A
 			if a.t1.Len() < a.c {
 				a.delLRU(a.b1)
+				a.db.Remove("B1")
 				a.replace(ent)
 			} else {
 				a.delLRU(a.t1)
@@ -162,6 +171,7 @@ func (a *ARC) req(ent *entry) {
 			if a.t1.Len()+a.t2.Len()+a.b1.Len()+a.b2.Len() >= a.c {
 				if a.t1.Len()+a.t2.Len()+a.b1.Len()+a.b2.Len() == 2*a.c {
 					a.delLRU(a.b2)
+					a.db.Remove("B2")
 				}
 				a.replace(ent)
 			}
@@ -182,17 +192,21 @@ func (a *ARC) replace(ent *entry) {
 	if a.t1.Len() > 0 && ((a.t1.Len() > a.p) || (ent.ll == a.b2 && a.t1.Len() == a.p)) {
 		lru := a.t1.Back().Value.(*entry)
 		a.logger.Debug("Moving item from T1 to B1", "item", fmt.Sprintf("%+v", lru))
-		//	lru.value = nil
+		//lru.value = nil
 		lru.ghost = true
 		a.len--
 		lru.setMRU(a.b1)
+		// Archieve  Evicted items to database
+		a.db.PushFront("B1", lru.key, lru.value)
 	} else {
 		lru := a.t2.Back().Value.(*entry)
 		a.logger.Debug("Moving item from T2 to B2", "item", fmt.Sprintf("%+v", lru))
-		//	lru.value = nil
+		//lru.value = nil
 		lru.ghost = true
 		a.len--
 		lru.setMRU(a.b2)
+		// Archieve  Evicted items to database
+		a.db.PushFront("B2", lru.key, lru.value)
 	}
 }
 

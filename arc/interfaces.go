@@ -26,8 +26,8 @@ type Logger interface {
 
 // DBService is a generic User operations interface
 type DBService interface {
-	Get(ListID int, key interface{}) (interface{}, error)
-	Add(ListID int, key interface{}, value interface{}) error
+	Remove(ListID string) error
+	PushFront(ListID string, key interface{}, value interface{}) error
 }
 
 // EntryService is to allow ghost entries to be stored into the database

@@ -58,7 +58,8 @@ func main() {
 		list.New(),
 		// models.NewGhostList(),
 		//models.NewGhostList(database),
-		arc.SetLogger(logger))
+		arc.SetLogger(logger),
+		arc.SetDatabaseListService(models.NewGhostList(database)))
 
 	for { // Keep the program executing until user chooses to exit
 		//prompt user to select an option

@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+/*
 type Element struct {
 	next, prev *Element
 
@@ -28,28 +29,33 @@ func (e *Element) Prev() *Element {
 	// 	return p
 	// }
 	return nil
-}
+}*/
 
 // GhostList for maintaining Ghost entries
 type GhostList struct {
-	ID       string
-	root     Element
-	len      int
+	ID string
+	// root     Element
+	// len      int
 	database *Database
 }
 
 // NewGhostList return a new ghost list
 func NewGhostList(db *Database) *GhostList {
-	return &GhostList{
+
+	gl := &GhostList{
 		database: db,
-		len:      0,
+		//	len:      0,
 	}
+	gl.Reset()
+	return gl
 }
 
+/*
 // Back returns last element from database
 func (gl *GhostList) Back() *Element {
 	return &Element{}
 }
+
 
 // Front returns the first element from database
 func (gl *GhostList) Front() *Element {
@@ -74,10 +80,10 @@ func (gl *GhostList) PushFront(e interface{}) *Element {
 // PushFront inserts a new element e with value v at the front of list l and returns e.
 func (gl *GhostList) PushBack(v interface{}) *Element {
 	return nil
-}
+}*/
 
 // Get returns a list of ghost entries from database for the given list (B1, or B2)
-func (gl *GhostList) Get(listID int) (map[interface{}]interface{}, error) {
+func (gl *GhostList) Get(listID string) (map[interface{}]interface{}, error) {
 	logger := gl.database.logger
 	logger.Debug("Geting key value pair from database.")
 	rows, err := gl.database.db.Query("SELECT ghost_key, ghost_value FROM ghost_entries = ?", listID)
@@ -101,13 +107,14 @@ func (gl *GhostList) Get(listID int) (map[interface{}]interface{}, error) {
 }
 
 // Add saves a ghost List into database
-func (gl *GhostList) Add(listID int, key, value interface{}) error {
+func (gl *GhostList) PushFront(listID string, key, value interface{}) error {
 	logger := gl.database.logger
 	logger.Debug("Saving a key value pair in database.")
 
-	stmt, err := gl.database.db.Prepare("INSERT INTO `ghost_entries` (`list_id`, `ghost_key`, `ghost_value`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `ghost_value` = VALUES(`ghost_value`);")
+	stmt, err := gl.database.db.Prepare("INSERT INTO `ghost_lists` (`list_id`, `ghost_key`, `ghost_value`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `ghost_value` = VALUES(`ghost_value`);")
 
 	if err != nil {
+		logger.Debug(fmt.Sprintf("Error preparing add ghost entry %s", err))
 		return fmt.Errorf("Error preparing add ghost entry %s", err)
 	}
 
@@ -120,7 +127,43 @@ func (gl *GhostList) Add(listID int, key, value interface{}) error {
 	)
 
 	if err != nil {
+		logger.Debug(fmt.Sprintf("Error inserting ghost entries: %s", err))
 		return fmt.Errorf("Error inserting ghost entries: %s", err)
 	}
+	return nil
+}
+
+func (gl *GhostList) Remove(listID string) error {
+	logger := gl.database.logger
+	logger.Debug("Deleting list from Database.")
+	stmt, err := gl.database.db.Prepare("DELETE FROM `ghost_lists` WHERE `list_id` = ? Limit 1")
+
+	if err != nil {
+		logger.Debug(fmt.Sprintf("Error preparing delet ghost entries: %s", err))
+		return err
+	}
+
+	defer stmt.Close()
+
+	_, err = stmt.Exec(listID)
+
+	if err != nil {
+		logger.Debug(fmt.Sprintf("Error deleting ghost entries: %s", err))
+	}
+	// if no err, then err will be nil
+	return err
+}
+
+func (gl *GhostList) Reset() error {
+	logger := gl.database.logger
+	logger.Debug("Deleting lists from Database.")
+	_, err := gl.database.db.Query("DELETE FROM `ghost_lists`;")
+
+	if err != nil {
+		logger.Debug(fmt.Sprintf("Error preparing delet ghost entries: %s", err))
+		return err
+	}
+	logger.Debug("Database Reset.")
+	// if no err, then err will be nil
 	return nil
 }
