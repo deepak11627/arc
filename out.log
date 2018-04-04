@@ -122,3 +122,11 @@
 {"loglevel":"DEBUG","time":"2018-04-05T00:15:38.440+0530","caller":"log/log.go:80","msg":"Deleting list from Database.","service":"ARC-IN-GO","version":"1.0"}
 {"loglevel":"DEBUG","time":"2018-04-05T00:15:38.480+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:o value:p ll:0xc42007cf90 el:0xc42007d7d0 ghost:false}"}
 {"loglevel":"DEBUG","time":"2018-04-05T00:15:38.480+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:36:59.857+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:36:59.949+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:37:03.884+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:37:03.884+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:39:35.896+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:39:35.897+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:39:38.731+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:39:38.731+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
