@@ -19,15 +19,18 @@ import (
 var CacheSize int
 var debug bool
 var logPath string
+var dsn string
 
 func init() {
 	// Initialise things here
 	flag.BoolVar(&debug, "debug", true, "Set the log level to debug")
 	flag.StringVar(&logPath, "log-path", "", "File path for log. Will attempt to create file but not directories. If empty (default) Stdout will be used.")
+	flag.StringVar(&dsn, "dsn", "", "The dsn string to connect to the database and allow storing lists in db.")
 
 }
 func main() {
 
+	flag.Parse()
 	// Logger
 	logger, err := log.NewLogger(&log.Config{ApplicationVersion: "1.0", Debug: debug, JSONFormat: true, LogPath: "out.log"})
 	if err != nil {
@@ -36,14 +39,17 @@ func main() {
 	}
 
 	// Database
-	db, err := models.Open("root:root@tcp(127.0.0.1:3306)/arc")
+	var database *models.Database
+	// dsn example "root:root@tcp(127.0.0.1:3306)/arc"
+	db, err := models.Open(dsn)
 	if err != nil {
 		logger.Error("unexpected error getting db connection", "err", err)
-		fmt.Println("unexpected error getting db connection:", err)
+		fmt.Println("DSN not provided.", err)
 		os.Exit(1)
+	} else {
+		database = models.NewDatabase(db, models.SetLogger(logger))
+		defer database.Close()
 	}
-	database := models.NewDatabase(db, models.SetLogger(logger))
-	defer database.Close()
 
 	// Let's take cache size from user
 	utils.Message("Please enter maximum number of keys which caching system should store. ")
@@ -52,14 +58,13 @@ func main() {
 	}
 
 	a := arc.NewARC(CacheSize,
-		arc.NewMemoryList(),
 		list.New(),
 		list.New(),
 		list.New(),
-		// models.NewGhostList(),
-		//models.NewGhostList(database),
+		list.New(),
 		arc.SetLogger(logger),
-		arc.SetDatabaseListService(models.NewGhostList(database)))
+		arc.SetDatabaseListService(models.NewGhostList(database)),
+	)
 
 	for { // Keep the program executing until user chooses to exit
 		//prompt user to select an option

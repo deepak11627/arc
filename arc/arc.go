@@ -162,7 +162,9 @@ func (a *ARC) req(ent *entry) {
 			// Case A
 			if a.t1.Len() < a.c {
 				a.delLRU(a.b1)
-				a.db.Remove("B1")
+				if a.db != nil {
+					a.db.Remove("B1")
+				}
 				a.replace(ent)
 			} else {
 				a.delLRU(a.t1)
@@ -172,13 +174,16 @@ func (a *ARC) req(ent *entry) {
 			if a.t1.Len()+a.t2.Len()+a.b1.Len()+a.b2.Len() >= a.c {
 				if a.t1.Len()+a.t2.Len()+a.b1.Len()+a.b2.Len() == 2*a.c {
 					a.delLRU(a.b2)
-					a.db.Remove("B2")
+					if a.db != nil {
+						a.db.Remove("B2")
+					}
 				}
 				a.replace(ent)
 			}
 		}
 		ent.setMRU(a.t1)
 	}
+	a.logger.Debug("Adaptation value was", "p", a.p)
 }
 
 func (a *ARC) delLRU(l ListService) {
@@ -198,7 +203,10 @@ func (a *ARC) replace(ent *entry) {
 		a.len--
 		lru.setMRU(a.b1)
 		// Archieve  Evicted items to database
-		a.db.PushFront("B1", lru.key, lru.value)
+		if a.db != nil {
+			a.db.PushFront("B1", lru.key, lru.value)
+		}
+
 	} else {
 		lru := a.t2.Back().Value.(*entry)
 		a.logger.Debug("Moving item from T2 to B2", "item", fmt.Sprintf("%+v", lru))
@@ -207,7 +215,9 @@ func (a *ARC) replace(ent *entry) {
 		a.len--
 		lru.setMRU(a.b2)
 		// Archieve  Evicted items to database
-		a.db.PushFront("B2", lru.key, lru.value)
+		if a.db != nil {
+			a.db.PushFront("B2", lru.key, lru.value)
+		}
 	}
 }
 

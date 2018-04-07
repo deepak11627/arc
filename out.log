@@ -1,152 +1,88 @@
-{"loglevel":"DEBUG","time":"2018-04-04T23:50:50.388+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:50:50.389+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:15.963+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:15.964+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:19.079+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:19.079+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:21.691+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:21.691+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:24.672+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:24.672+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:29.545+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:29.546+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:36.295+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:36.295+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:36.295+0530","caller":"log/log.go:80","msg":"Removing item from list","service":"ARC-IN-GO","version":"1.0","item":"&{next:0xc42006af90 prev:0xc42006b0b0 list:0xc42006af90 Value:0xc420058380}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:55.049+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"d"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:52:55.049+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:0xc42006af90 el:0xc42006b170 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:53:13.381+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:c value:v ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:53:13.381+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:c value:v ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:53:13.382+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc42006af90 el:0xc42006b0b0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:53:13.382+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:53:13.385+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:54:56.445+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"c"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:54:56.445+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:c value:v ll:0xc42006af90 el:0xc42006b3b0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:55:43.440+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"a"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:55:43.441+0530","caller":"log/log.go:80","msg":"Case 2","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:<nil> ll:0xc42006aff0 el:0xc42006b1d0 ghost:true}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:55:43.441+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:0xc42006af90 el:0xc42006b0e0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:55:43.441+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:55:43.442+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:42.950+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:42.952+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:46.496+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:46.496+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:48.238+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:48.238+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:50.476+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:50.476+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:52.951+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:56:52.951+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:06.465+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:06.465+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:06.465+0530","caller":"log/log.go:80","msg":"Removing item from list","service":"ARC-IN-GO","version":"1.0","item":"&{next:0xc42007cf90 prev:0xc42007d0b0 list:0xc42007cf90 Value:0xc420092300}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:36.910+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:36.911+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:39.957+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:39.957+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:42.760+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:42.760+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:48.092+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:48.092+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:57:48.092+0530","caller":"log/log.go:80","msg":"Removing item from list","service":"ARC-IN-GO","version":"1.0","item":"&{next:0xc420078f90 prev:0xc4200790b0 list:0xc420078f90 Value:0xc420058380}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:00.165+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"z"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:00.166+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:0xc420078f90 el:0xc420079110 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:21.292+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:21.292+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:21.292+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc420078f90 el:0xc4200790b0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:21.292+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:58:21.295+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:15.916+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"e"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:15.916+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:0xc420078f90 el:0xc420079350 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:23.396+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:23.396+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:23.396+0530","caller":"log/log.go:80","msg":"Moving item from T2 to B2","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:0xc420078fc0 el:0xc420079140 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:23.396+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:23.397+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:53.779+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"z"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:53.779+0530","caller":"log/log.go:80","msg":"Case 3","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:<nil> ll:0xc420079020 el:0xc4200793b0 ghost:true}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:53.779+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc420078f90 el:0xc420079470 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:53.779+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-04T23:59:53.779+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:01:54.973+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:01:54.975+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:01:59.983+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:01:59.984+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:02.067+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:02.067+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:04.071+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:04.071+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:06.098+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:06.098+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:07.895+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:07.895+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:09.854+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:c value:v ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:09.855+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:c value:v ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:23.736+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"a"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:23.736+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc42007cf90 el:0xc42007d0b0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:30.031+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"e"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:30.031+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:0xc42007cf90 el:0xc42007d110 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:43.264+0530","caller":"log/log.go:80","msg":"Item found in cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_key":"c"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:43.265+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:c value:v ll:0xc42007cf90 el:0xc42007d170 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:55.594+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:t value:y ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:55.594+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:t value:y ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:55.594+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc42007cf90 el:0xc42007d080 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:02:55.594+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:03:20.253+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"q"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:03:20.254+0530","caller":"log/log.go:80","msg":"Case 2","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc42007cff0 el:0xc42007d230 ghost:true}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:03:20.254+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:0xc42007cf90 el:0xc42007d0e0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:03:20.254+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:28.808+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:h value:j ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:28.808+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:h value:j ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:28.808+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:0xc42007cf90 el:0xc42007d140 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:28.808+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:49.798+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"d"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:49.798+0530","caller":"log/log.go:80","msg":"Case 2","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:0xc42007cff0 el:0xc42007d530 ghost:true}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:49.798+0530","caller":"log/log.go:80","msg":"Moving item from T2 to B2","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc42007cfc0 el:0xc42007d1a0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:11:49.798+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:12:11.522+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:o value:p ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:12:11.522+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:o value:p ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:12:11.522+0530","caller":"log/log.go:80","msg":"Moving item from T2 to B2","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:0xc42007cfc0 el:0xc42007d1d0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:12:11.522+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:18.226+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:j value:h ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:18.226+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:j value:h ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:18.226+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:t value:y ll:0xc42007cf90 el:0xc42007d410 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:18.227+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:31.574+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:m value:h ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:31.574+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:m value:h ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:31.574+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:h value:j ll:0xc42007cf90 el:0xc42007d5f0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:31.574+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:38.440+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:n value:g ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:38.440+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:n value:g ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:38.440+0530","caller":"log/log.go:80","msg":"Removing item from list","service":"ARC-IN-GO","version":"1.0","item":"&{next:0xc42007cff0 prev:0xc42007d800 list:0xc42007cff0 Value:0xc420092480}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:38.440+0530","caller":"log/log.go:80","msg":"Deleting list from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:38.480+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:o value:p ll:0xc42007cf90 el:0xc42007d7d0 ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:15:38.480+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:36:59.857+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:36:59.949+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:37:03.884+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:37:03.884+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:39:35.896+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:39:35.897+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:39:38.731+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:39:38.731+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:48:53.824+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:48:53.825+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:48:56.460+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:48:56.461+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:54:38.754+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:54:38.755+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:54:43.559+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:q ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:54:43.560+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:q ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:55:19.894+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:55:19.895+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:55:21.816+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:55:21.816+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:56:01.205+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:56:01.207+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:56:02.765+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:56:02.765+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:57:11.681+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:57:11.683+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:57:36.161+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
-{"loglevel":"DEBUG","time":"2018-04-05T00:57:36.161+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:02.875+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:02.876+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:02.876+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:05.026+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:05.026+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:05.026+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:08.045+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:08.046+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:08.046+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:10.138+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:10.138+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:10.138+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:13.258+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:13.258+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:13.259+0530","caller":"log/log.go:80","msg":"Removing item from list","service":"ARC-IN-GO","version":"1.0","item":"&{next:0xc420078fc0 prev:0xc4201aa030 list:0xc420078fc0 Value:0xc42019c000}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:13.259+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:41.085+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"a"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:41.085+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc420078fc0 el:0xc4201aa030 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:25:41.085+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:26:13.393+0530","caller":"log/log.go:80","msg":"Item found in cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_key":"d"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:26:13.393+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:d value:f ll:0xc420078fc0 el:0xc4201aa0f0 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:26:13.393+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:06.148+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:06.148+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:06.148+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:0xc420078fc0 el:0xc4201aa060 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:06.148+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:06.155+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:06.155+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:19.784+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"z"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:19.785+0530","caller":"log/log.go:80","msg":"Case 2","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:<nil> ll:0xc420079020 el:0xc4201aa180 ghost:true}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:19.785+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:e value:r ll:0xc420078fc0 el:0xc4201aa090 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:19.785+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:19.786+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:19.786+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":1}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:32.973+0530","caller":"log/log.go:80","msg":"Item found in cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_key":"z"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:32.973+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:w ll:0xc420078ff0 el:0xc4201aa450 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:27:32.973+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":1}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:35.283+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"q"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:35.283+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc420078fc0 el:0xc4201aa360 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:35.283+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":1}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:50.649+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:i value:o ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:50.650+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:i value:o ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:50.650+0530","caller":"log/log.go:80","msg":"Moving item from T2 to B2","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc420078ff0 el:0xc4201aa120 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:50.650+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:50.652+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:33:50.652+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":1}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:02.928+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"a"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:02.928+0530","caller":"log/log.go:80","msg":"Case 3","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:<nil> ll:0xc420079050 el:0xc4201aa4e0 ghost:true}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:02.928+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:i value:o ll:0xc420078fc0 el:0xc4201aa5a0 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:02.928+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:02.930+0530","caller":"log/log.go:80","msg":"Error inserting ghost entries: Error 1048: Column 'ghost_value' cannot be null","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:02.930+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:30.761+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:30.763+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:33.341+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:33.341+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:33.342+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:35.090+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:35.091+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:35.091+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:36.912+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:36.912+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:36.912+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:38.949+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:r value:t ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:38.949+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:r value:t ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:38.949+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:44.590+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"q"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:44.590+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc420078fc0 el:0xc4201a2000 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:44.590+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:46.516+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"a"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:46.517+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:a value:s ll:0xc420078fc0 el:0xc4201a2030 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:46.517+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:47.888+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"z"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:47.888+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:z value:x ll:0xc420078fc0 el:0xc4201a2060 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:47.888+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:56.524+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"r"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:56.524+0530","caller":"log/log.go:80","msg":"Case 1","service":"ARC-IN-GO","version":"1.0","item":"&{key:r value:t ll:0xc420078fc0 el:0xc4201a2090 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:34:56.524+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:02.133+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:g value:h ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:02.133+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:g value:h ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:02.133+0530","caller":"log/log.go:80","msg":"Moving item from T2 to B2","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc420078ff0 el:0xc4201a20c0 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:02.133+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:02.200+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:11.481+0530","caller":"log/log.go:80","msg":"Reading a value from cache, will adjust its position","service":"ARC-IN-GO","version":"1.0","item_keu":"q"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:11.481+0530","caller":"log/log.go:80","msg":"Case 3","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:0xc420079050 el:0xc4201a21b0 ghost:true}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:11.481+0530","caller":"log/log.go:80","msg":"Moving item from T1 to B1","service":"ARC-IN-GO","version":"1.0","item":"&{key:g value:h ll:0xc420078fc0 el:0xc4201a2390 ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:11.481+0530","caller":"log/log.go:80","msg":"Saving a key value pair in database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-08T01:35:11.602+0530","caller":"log/log.go:80","msg":"Adaptation value was","service":"ARC-IN-GO","version":"1.0","p":0}
