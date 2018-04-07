@@ -130,3 +130,23 @@
 {"loglevel":"DEBUG","time":"2018-04-05T00:39:35.897+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
 {"loglevel":"DEBUG","time":"2018-04-05T00:39:38.731+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
 {"loglevel":"DEBUG","time":"2018-04-05T00:39:38.731+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:48:53.824+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:48:53.825+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:48:56.460+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:48:56.461+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:54:38.754+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:54:38.755+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:54:43.559+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:q ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:54:43.560+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:q value:q ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:55:19.894+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:55:19.895+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:55:21.816+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:55:21.816+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:56:01.205+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:56:01.207+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:56:02.765+0530","caller":"log/log.go:80","msg":"Adding a new entry item to cache.","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:56:02.765+0530","caller":"log/log.go:80","msg":"Case 4","service":"ARC-IN-GO","version":"1.0","item":"&{key:w value:w ll:<nil> el:<nil> ghost:false}"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:57:11.681+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:57:11.683+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:57:36.161+0530","caller":"log/log.go:80","msg":"Deleting lists from Database.","service":"ARC-IN-GO","version":"1.0"}
+{"loglevel":"DEBUG","time":"2018-04-05T00:57:36.161+0530","caller":"log/log.go:80","msg":"Database Reset.","service":"ARC-IN-GO","version":"1.0"}

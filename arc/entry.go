@@ -31,6 +31,7 @@ func (e *entry) setMRU(l interface{}) {
 		// case *models.GhostList:
 		// 	e.ll = l.(*models.GhostList)
 	}
+
 	e.el = e.ll.PushFront(e)
 }
 

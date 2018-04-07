@@ -55,6 +55,7 @@ func NewARC(c int, t1, t2, b1, b2 ListService, opts ...Option) CacheService {
 	for _, o := range opts {
 		o(arc)
 	}
+
 	return arc
 }
 

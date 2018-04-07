@@ -52,7 +52,7 @@ func main() {
 	}
 
 	a := arc.NewARC(CacheSize,
-		list.New(),
+		arc.NewMemoryList(),
 		list.New(),
 		list.New(),
 		list.New(),
