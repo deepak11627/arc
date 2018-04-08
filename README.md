@@ -9,7 +9,7 @@ Database is reset everytime the app is started.
 
 # Logging
 
-ZapLogger is been used for logging purpose. While the application is running the logs can be checked/viewed in `log.out` file.
+Zap Logger is been used for logging purpose. While the application is running the logs can be viewed in `out.log` file.
 
 # Database
 

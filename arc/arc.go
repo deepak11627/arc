@@ -9,6 +9,15 @@ import (
 )
 
 // ARC struct to implement ARC cache
+// In Cache:
+// - T1: Pages that have been accessed at least once
+// - T2: Pages that have been accessed at least twice
+// Ghost:
+// - B1: Evicted from T1
+// - B2: Evicted from T2
+// Adapt:
+// - Hit in B1 should increase size of T1, drop entry from T2 to B2
+// - Hit in B2 should increase size of T2, drop entry from T1 to B1
 type ARC struct {
 	p      int
 	c      int
@@ -120,12 +129,16 @@ func (a *ARC) req(ent *entry) {
 		a.logger.Debug("Case 1", "item", fmt.Sprintf("%+v", ent))
 		// repetitive entry so should go into MRU
 		// Case I
+		// x ∈ T1 ∪ T2 (a hit in ARC(c) and DBL(2c)): Move x to the top of T2
 		ent.setMRU(a.t2)
 	} else if ent.ll == a.b1 {
+
 		a.logger.Debug("Case 2", "item", fmt.Sprintf("%+v", ent))
 		// Case II
 		// Cache Miss in t1 and t2
-
+		// x ∈ B1 (a miss in ARC(c), a hit in DBL(2c)):
+		// Adapt p = min{ c, p + max{ |B2| / |B1|, 1} }. REPLACE(p).
+		// Move x to the top of T2 and place it in the cache.
 		// Adaptation
 		var d int
 		if a.b1.Len() >= a.b2.Len() {
@@ -136,14 +149,14 @@ func (a *ARC) req(ent *entry) {
 		a.p = utils.Min(a.p+d, a.c)
 
 		a.replace(ent)
-
-		//ent.setLRU(a.t2)
 		ent.setMRU(a.t2)
 	} else if ent.ll == a.b2 {
 		a.logger.Debug("Case 3", "item", fmt.Sprintf("%+v", ent))
 		// Case III
 		// Cache Miss in t1 and t2
-
+		// x ∈ B2 (a miss in ARC(c), a hit in DBL(2c)):
+		// Adapt p = max{ 0, p – max{ |B1| / |B2|, 1} } . REPLACE(p).
+		// Move x to the top of T2 and place it in the cache.
 		// Adaptation
 		var d int
 		if a.b2.Len() >= a.b1.Len() {
@@ -158,6 +171,14 @@ func (a *ARC) req(ent *entry) {
 	} else if ent.ll == nil {
 		a.logger.Debug("Case 4", "item", fmt.Sprintf("%+v", ent))
 		// Case IV
+		// x ∈ L1 ∪ L2 (a miss in DBL(2c) and ARC(c)):
+		// case (i) |L1| = c:
+		//   If |T1| < c then delete the LRU page of B1 and REPLACE(p).
+		//   else delete LRU page of T1 and remove it from the cache.
+		// case (ii) |L1| < c and |L1| + |L2|≥ c:
+		//   if |L1| + |L2|= 2c then delete the LRU page of B2.
+		//   REPLACE(p) .
+		// Put x at the top of T1 and place it in the cache.
 		if a.t1.Len()+a.b1.Len() == a.c {
 			// Case A
 			if a.t1.Len() < a.c {
@@ -195,10 +216,13 @@ func (a *ARC) delLRU(l ListService) {
 }
 
 func (a *ARC) replace(ent *entry) {
+	// if (|T1| ≥ 1) and ((x ∈ B2 and |T1| = p) or (|T1| > p))
+	//   then move the LRU page of T1 to the top of B1 and remove it from the cache.
+	// else move the LRU page in T2 to the top of B2 and remove it from the cache.
 	if a.t1.Len() > 0 && ((a.t1.Len() > a.p) || (ent.ll == a.b2 && a.t1.Len() == a.p)) {
 		lru := a.t1.Back().Value.(*entry)
 		a.logger.Debug("Moving item from T1 to B1", "item", fmt.Sprintf("%+v", lru))
-		//lru.value = nil
+		lru.value = nil
 		lru.ghost = true
 		a.len--
 		lru.setMRU(a.b1)
@@ -210,7 +234,7 @@ func (a *ARC) replace(ent *entry) {
 	} else {
 		lru := a.t2.Back().Value.(*entry)
 		a.logger.Debug("Moving item from T2 to B2", "item", fmt.Sprintf("%+v", lru))
-		//lru.value = nil
+		lru.value = nil
 		lru.ghost = true
 		a.len--
 		lru.setMRU(a.b2)
@@ -223,13 +247,12 @@ func (a *ARC) replace(ent *entry) {
 
 // Traverse prints the items of a list
 func (a *ARC) Traverse() {
-	utils.RenderMessageHeading(fmt.Sprintf("Cache Size is %d, %d # items are cached.\n", a.c, a.Len()))
+	utils.RenderMessageHeading("Items are cached.")
 
 	// Iterate through list and print its contents.
 	for k, v := range a.cache {
-		if !v.ghost {
-			fmt.Printf("Value at %s is %s\n", k, v.value)
-		}
+		fmt.Printf("Value at %s is %s (isGhost - %v) \n", k, v.value, v.ghost)
+
 	}
 
 	utils.RenderMessageEnd()
